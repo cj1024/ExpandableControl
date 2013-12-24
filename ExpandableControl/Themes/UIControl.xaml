@@ -1,0 +1,24 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:expandableControl="clr-namespace:ExpandableControl">
+	<!-- 应该在此定义资源字典条目。-->
+    <Style TargetType="expandableControl:ExpandablePanel">
+        <Setter Property="GestureType" Value="Both"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="expandableControl:ExpandablePanel">
+                    <StackPanel x:Name="ContainerPanel">
+                        <Grid x:Name="DisplayPanel">
+                            <ContentPresenter x:Name="DisplayContentPresenter" ContentTemplate="{TemplateBinding DisplayTemplate}" Content="{TemplateBinding DisplayContent}"/>
+                            <ContentPresenter x:Name="IgnoreContentPresenter" ContentTemplate="{TemplateBinding IgnoreTemplate}" Content="{TemplateBinding IgnoreContent}"/>
+                        </Grid>
+                        <Grid x:Name="ExpandPanel">
+                            <ContentPresenter x:Name="ExpandContentPresenter"/>
+                        </Grid>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
